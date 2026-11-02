@@ -9,5 +9,9 @@ app = Flask(__name__)
 def home():
     return "<h1><em>You</em> are <strong>home</strong>.</h1>"
 
+@app.route('/<string:username>')
+def user(username):
+    return f"<h1>Profile for {username}</h1>"
+
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
